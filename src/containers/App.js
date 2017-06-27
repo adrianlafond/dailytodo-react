@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Day from './Day';
 import Settings from './Settings';
+import './App.css';
 
 class App extends Component {
 
-
   render() {
+    const theme = `theme--${this.props.app.theme}`;
     return (
       <Router>
-        <div>
+        <div className={`app ${theme}`}>
           <Switch>
             <Route path="/settings" component={Settings} />
             <Route path="/settings/:detail" component={Settings} />
@@ -22,7 +23,7 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-    );
+    )
   }
 }
 

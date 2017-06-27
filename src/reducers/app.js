@@ -1,9 +1,10 @@
 import Immutable from 'seamless-immutable';
 import * as type from '../constants/actions-app';
+import { THEME_DEFAULT } from '../themes/';
 
 
 const initialState = Immutable({
-  theme: 'default',
+  theme: THEME_DEFAULT.id,
 });
 
 function AppReducer(state = initialState, action) {
