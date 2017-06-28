@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Day from './Day';
 import Settings from './Settings';
 import './App.css';
+import '../components/inputs/select.css';
 
 class App extends Component {
 

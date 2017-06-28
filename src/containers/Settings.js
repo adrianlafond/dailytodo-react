@@ -29,7 +29,7 @@ class Settings extends Component {
     });
     return (
       <select
-        className="settings__date-format"
+        className="settings__date-format select"
         value={this.props.dateFormat}
         onChange={this.onDateFormatChange.bind(this)}>
         {options}
@@ -47,7 +47,7 @@ class Settings extends Component {
     });
     return (
       <select
-        className="settings__theme"
+        className="settings__theme select"
         value={this.props.theme}
         onChange={this.onThemeChange.bind(this)}>
         {options}
