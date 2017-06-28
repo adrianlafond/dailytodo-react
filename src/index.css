@@ -8,6 +8,7 @@ body {
   font-family: sans-serif;
   background-color: #000;
   color: #fff;
+  font-family: Baskerville;
 }
 
 #root {
@@ -15,5 +16,7 @@ body {
 }
 
 :root {
-  --red: #f00;
+  --font-large: 1.2rem;
+  --font-medium: 1rem;
+  --font-small: 0.8rem;
 }

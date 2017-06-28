@@ -1,0 +1,19 @@
+.settings {
+  padding: 2rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.settings select {
+  display: block;
+}
+
+.settings__headline {
+  font-weight: normal;
+  font-size: var(--font-large);
+  margin: 0;
+}
+
+.settings__date-format {
+  font-family: Baskerville;
+}
