@@ -4,6 +4,8 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Day from './Day';
 import Settings from './Settings';
 import './App.css';
+import '../themes/light.css';
+import '../themes/dark.css';
 
 class App extends Component {
 

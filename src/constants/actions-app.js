@@ -1,2 +1,3 @@
 
 export const CHANGE_THEME = 'CHANGE_THEME';
+export const CHANGE_DATE_FORMAT = 'CHANGE_DATE_FORMAT';
