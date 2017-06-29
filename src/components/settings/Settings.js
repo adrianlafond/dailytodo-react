@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import FORMATS from '../constants/date-formats';
-import THEMES from '../themes/';
-import * as actions from '../actions/actions-app';
+import FORMATS from '../../constants/date-formats';
+import THEMES from '../../themes/';
+import * as actions from '../../actions/actions-app';
 import './Settings.css';
 
 class Settings extends Component {

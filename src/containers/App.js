@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Day from './Day';
-import Settings from './Settings';
+import Timeline from '../components/timeline/Timeline';
 import './App.css';
 import '../components/inputs/select.css';
 import '../components/card/card.css';
@@ -15,13 +14,13 @@ class App extends Component {
       <Router>
         <div className={`app ${theme}`}>
           <Switch>
-            <Route path="/settings" component={Settings} />
-            <Route path="/settings/:detail" component={Settings} />
-            <Route path="/:year/:month/:date/:note" component={Day} />
-            <Route path="/:year/:month/:date" component={Day} />
-            <Route path="/:year/:month" component={Day} />
-            <Route path="/:year" component={Day} />
-            <Route component={Day}/>
+            <Route path="/settings/:detail" component={Timeline} />
+            <Route path="/settings" component={Timeline} />
+            <Route path="/:year/:month/:date/:note" component={Timeline} />
+            <Route path="/:year/:month/:date" component={Timeline} />
+            <Route path="/:year/:month" component={Timeline} />
+            <Route path="/:year" component={Timeline} />
+            <Route component={Timeline}/>
           </Switch>
         </div>
       </Router>

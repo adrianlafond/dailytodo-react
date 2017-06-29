@@ -4,6 +4,9 @@
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: var(--bgcolor);
+  color: var(--fgcolor);
+  font-family: var(--font-family);
 }
 
 .card__inner {}

@@ -5,10 +5,11 @@ class Day extends Component {
 
   render() {
     const { year, month, date } = this.props.match.params;
-    console.log(this.props)
     return (
-      <div className="day">
-        <p>{year}/{month}/{date}</p>
+      <div className="day card">
+        <div className="card__inner">
+          <p>{year}/{month}/{date}</p>
+        </div>
       </div>
     );
   }
