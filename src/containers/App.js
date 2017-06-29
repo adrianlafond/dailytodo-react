@@ -5,6 +5,7 @@ import Day from './Day';
 import Settings from './Settings';
 import './App.css';
 import '../components/inputs/select.css';
+import '../components/card/card.css';
 
 class App extends Component {
 

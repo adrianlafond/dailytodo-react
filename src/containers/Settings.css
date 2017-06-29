@@ -1,8 +1,4 @@
-.settings {
-  padding: 2rem;
-  height: 100%;
-  box-sizing: border-box;
-}
+.settings {}
 
 .settings__headline {
   font-weight: normal;

@@ -9,12 +9,14 @@ class Settings extends Component {
 
   render() {
     return (
-      <div className="settings">
-        <h2 className="settings__headline">Settings</h2>
-        <form>
-          {this.renderDateFormats()}
-          {this.renderThemes()}
-        </form>
+      <div className="settings card">
+        <div className="card__inner">
+          <h2 className="settings__headline">Settings</h2>
+          <form>
+            {this.renderDateFormats()}
+            {this.renderThemes()}
+          </form>
+        </div>
       </div>
     );
   }

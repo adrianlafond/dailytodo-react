@@ -1,5 +1,6 @@
 :root {
-  --font-family: Cochin, serif;
+  /*--font-family: Cochin, serif;*/
+  --font-family: Avenir-Book, sans-serif;
   --font-large: 1.2rem;
   --font-medium: 1rem;
   --font-small: 0.8rem;
