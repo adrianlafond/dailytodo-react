@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Day from '../day/Day';
 import Settings from '../settings/Settings';
 
-class Timeline extends Component {
+export default class Timeline extends Component {
 
   render() {
     const {match, app} = this.props;
@@ -31,9 +30,3 @@ class Timeline extends Component {
     // }
   }
 }
-
-const mapStateToProps = (state, props) => {
-  return state;
-}
-
-export default connect(mapStateToProps)(Timeline);
