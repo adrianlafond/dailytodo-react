@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import FORMATS from '../../constants/date-formats';
 import THEMES from '../../themes/';
 import * as actions from '../../actions/actions-app';
 import './Settings.css';
 
-class Settings extends Component {
+export default class Settings extends Component {
+
+  static propTypes: {
+    dateFormat: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired,
+  }
 
   render() {
     return (
@@ -65,9 +70,3 @@ class Settings extends Component {
     this.props.dispatch(actions.changeTheme(event.target.value));
   }
 }
-
-const mapStateToProps = (state, props) => {
-  return state.app
-}
-
-export default connect(mapStateToProps)(Settings);

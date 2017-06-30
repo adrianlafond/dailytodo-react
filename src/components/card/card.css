@@ -7,6 +7,9 @@
   background-color: var(--bgcolor);
   color: var(--fgcolor);
   font-family: var(--font-family);
+
+  width: 300px;
+  height: 400px;
 }
 
 .card__inner {}

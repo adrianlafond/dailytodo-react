@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import './Day.css';
 
-class Day extends Component {
+export default class Day extends Component {
+
+  // This does not work here; see Day.propTypes at bottom.
+  // static propTypes: {
+  //   date: PropTypes.shape({
+  //     year: PropTypes.number.isRequired,
+  //     month: PropTypes.number.isRequired,
+  //     date: PropTypes.number.isRequired,
+  //   }),
+  //   dateFormat: PropTypes.string.isRequired,
+  // }
 
   render() {
-    const { year, month, date } = this.props.match.params;
     return (
       <div className="day card">
         <div className="card__inner">
-          <p>{year}/{month}/{date}</p>
+          <h2 className="day__headline">{this.renderDate()}</h2>
         </div>
       </div>
     );
   }
 
-  componentDidMount() {
-    this.validateRoute();
-  }
-
-  componentDidUpdate() {
-    this.validateRoute();
-  }
-
-  validateRoute() {
-    // const { year, month, date } = this.props.match.params;
-    // if (date === undefined) {
-    //   window.location.replace(`#/${year}/${month}/1`);
-    // }
+  renderDate() {
+    const { year, month, date } = this.props.date;
+    const { dateFormat } = this.props;
+    return moment([year, month, date]).format(dateFormat);
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return state;
-}
-
-export default connect(mapStateToProps)(Day);
+Day.propTypes = {
+    date: PropTypes.shape({
+      year: PropTypes.number.isRequired,
+      month: PropTypes.number.isRequired,
+      date: PropTypes.number.isRequired,
+    }),
+    dateFormat: PropTypes.string.isRequired,
+  }

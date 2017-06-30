@@ -1,0 +1,6 @@
+.day {}
+
+.day__headline {
+  margin: 0;
+  font-size: var(--font-large);
+}
