@@ -3,15 +3,13 @@ import Immutable from 'seamless-immutable';
 
 
 const initialState = Immutable({
-  todos: [],
+  years: {},
 });
 
-function TodoReducer(state = initialState, action) {
+export default function TaskReducer(state = initialState, action) {
   switch (action.type) {
     default:
       break;
   }
   return state;
 }
-
-export default TodoReducer;

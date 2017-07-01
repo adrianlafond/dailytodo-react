@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import positionRect from '../util/positionRect';
 import FORMATS from '../../constants/date-formats';
 import THEMES from '../../themes/';
 import * as actions from '../../actions/actions-app';
@@ -10,11 +11,13 @@ export default class Settings extends Component {
   static propTypes: {
     dateFormat: PropTypes.string.isRequired,
     theme: PropTypes.string.isRequired,
+    rect: PropTypes.object.isRequired,
   }
 
   render() {
+    const { rect } = this.props;
     return (
-      <div className="settings card">
+      <div className="settings card" style={positionRect(rect)}>
         <div className="card__inner">
           <h2 className="settings__headline">Settings</h2>
           <form>

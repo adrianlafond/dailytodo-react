@@ -1,4 +1,5 @@
 .theme--high-contrast-dark {
   --bgcolor: #000;
   --fgcolor: #fff;
+  --border: 1px solid #333;
 }

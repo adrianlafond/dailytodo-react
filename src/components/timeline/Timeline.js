@@ -6,12 +6,36 @@ import Settings from '../settings/Settings';
 class Timeline extends Component {
 
   render() {
-    const {app, dispatch} = this.props;
     return (
       <div className="timeline">
-        <Day date={this.validDate()} dateFormat={app.dateFormat} dispatch={dispatch} />
-        <Settings app={app} dispatch={dispatch} />
+        {this.renderDays()}
+        {this.renderSettings()}
       </div>
+    );
+  }
+
+  renderDays() {
+    const {app, dispatch} = this.props;
+    return (
+      <Day
+        rect={{ x: 20, y: 20, width: 300, height: 400 }}
+        date={this.validDate()}
+        dateFormat={app.dateFormat}
+        dispatch={dispatch}
+      />
+    );
+  }
+
+  renderSettings() {
+    const {app, dispatch} = this.props;
+    const settingsRect = {
+      x: 20,
+      y: 460,
+      width: 300,
+      height: 400,
+    };
+    return (
+      <Settings app={app} dispatch={dispatch} rect={settingsRect} />
     );
   }
 

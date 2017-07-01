@@ -1,3 +1,4 @@
+import './root.css';
 import './light.css';
 import './dark.css';
 import './high-contrast-dark.css';
