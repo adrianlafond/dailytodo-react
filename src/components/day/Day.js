@@ -22,6 +22,8 @@ export default class Day extends Component {
       <div className="day card" style={positionRect(rect)}>
         <div className="card__inner">
           <h2 className="day__headline">{this.renderDate()}</h2>
+          <p className="day__task">Task (medium font size)</p>
+          <p className="day__note">Note (small font size)</p>
         </div>
       </div>
     );

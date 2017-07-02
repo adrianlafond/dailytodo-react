@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Timeline from '../components/timeline/Timeline';
+import Timeline from './Timeline';
 import './App.css';
 import '../components/inputs/select.css';
 import '../components/card/card.css';

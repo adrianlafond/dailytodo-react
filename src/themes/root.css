@@ -1,4 +1,9 @@
 :root {
+  /*--font-family: Cochin, serif;*/
+  --font-family: "Avenir-Book", "Avenir Book", sans-serif;
+  --font-large: 1.4rem;
+  --font-medium: 1.2rem;
+  --font-small: 1.0rem;
   --bgcolor: #fff;
   --fgcolor: #000;
   --border: 0;

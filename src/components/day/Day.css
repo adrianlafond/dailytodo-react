@@ -4,3 +4,13 @@
   margin: 0;
   font-size: var(--font-large);
 }
+
+.day__task {
+  margin: 0;
+  font-size: var(--font-medium);
+}
+
+.day__note {
+  margin: 0;
+  font-size: var(--font-small);
+}
