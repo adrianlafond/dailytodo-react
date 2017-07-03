@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { isEqual } from 'lodash';
 import Day from '../components/day/Day';
 import Settings from '../components/settings/Settings';
+import getTasks from '../util/getTasks';
 
 class Timeline extends Component {
 
@@ -24,12 +25,14 @@ class Timeline extends Component {
   }
 
   renderDays() {
-    const { app, dispatch } = this.props;
+    const { app, tasks, dispatch } = this.props;
     const { width, height } = this.state;
+    const date = this.validDate();
     return (
       <Day
         rect={{ x: 0, y: 0, width, height }}
-        date={this.validDate()}
+        date={date}
+        tasks={getTasks(tasks, date)}
         dateFormat={app.dateFormat}
         dispatch={dispatch}
       />

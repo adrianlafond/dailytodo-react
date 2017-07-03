@@ -9,6 +9,7 @@ import './Settings.css';
 export default class Settings extends Component {
 
   static propTypes: {
+    dispatch: PropTypes.func.isRequired,
     dateFormat: PropTypes.string.isRequired,
     theme: PropTypes.string.isRequired,
     rect: PropTypes.object.isRequired,

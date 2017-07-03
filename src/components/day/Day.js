@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import positionRect from '../util/positionRect';
 import moment from 'moment';
+import { getDayTasks } from '../../actions/actions-day';
 import './Day.css';
 
 export default class Day extends Component {
 
-  // This does not work here; see Day.propTypes at bottom.
-  // static propTypes: {
-  //   date: PropTypes.shape({
-  //     year: PropTypes.number.isRequired,
-  //     month: PropTypes.number.isRequired,
-  //     date: PropTypes.number.isRequired,
-  //   }),
-  //   dateFormat: PropTypes.string.isRequired,
-  // }
-
   render() {
+    console.log(this.props);
     const { rect } = this.props;
     return (
       <div className="day card" style={positionRect(rect)}>
@@ -34,9 +26,16 @@ export default class Day extends Component {
     const { dateFormat } = this.props;
     return moment([year, month, date]).format(dateFormat);
   }
+
+  componentDidMount() {
+    if (this.props.tasks.status === null) {
+      this.props.dispatch(getDayTasks(this.props.date));
+    }
+  }
 }
 
 Day.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   rect: PropTypes.object.isRequired,
   date: PropTypes.shape({
     year: PropTypes.number.isRequired,
@@ -44,4 +43,10 @@ Day.propTypes = {
     date: PropTypes.number.isRequired,
   }),
   dateFormat: PropTypes.string.isRequired,
+  tasks: PropTypes.shape({
+    status: PropTypes.oneOfType([
+      PropTypes.string,
+    ]),
+    values: PropTypes.array
+  }).isRequired
 }
