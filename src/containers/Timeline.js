@@ -16,6 +16,7 @@ class Timeline extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="timeline">
         {this.renderDays()}

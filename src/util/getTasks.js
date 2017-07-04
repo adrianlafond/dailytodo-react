@@ -4,5 +4,5 @@ export default function getTasks(tasks, ymd) {
   if (year in tasks && month in tasks[year] && date in tasks[year][month]) {
     return tasks[year][month][date];
   }
-  return { status: null, tasks: [] };
+  return { status: null, items: [] };
 }

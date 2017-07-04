@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import positionRect from '../util/positionRect';
 import moment from 'moment';
 import { getDayTasks } from '../../actions/actions-day';
+import Task from './Task';
+import { EMPTY } from '../../constants/tasks';
 import './Day.css';
 
 export default class Day extends Component {
 
   render() {
-    console.log(this.props);
     const { rect } = this.props;
     return (
       <div className="day card" style={positionRect(rect)}>
         <div className="card__inner">
           <h2 className="day__headline">{this.renderDate()}</h2>
-          <p className="day__task">Task (medium font size)</p>
-          <p className="day__note">Note (small font size)</p>
+          {this.renderTasks()}
+          <Task task={{ type: EMPTY }} />
         </div>
       </div>
     );
@@ -25,6 +26,14 @@ export default class Day extends Component {
     const { year, month, date } = this.props.date;
     const { dateFormat } = this.props;
     return moment([year, month, date]).format(dateFormat);
+  }
+
+  renderTasks() {
+    return this.props.tasks.items.map((task, index) => {
+      return (
+        <Task key={index} task={task} />
+      );
+    });
   }
 
   componentDidMount() {
@@ -47,6 +56,6 @@ Day.propTypes = {
     status: PropTypes.oneOfType([
       PropTypes.string,
     ]),
-    values: PropTypes.array
+    items: PropTypes.array.isRequired,
   }).isRequired
 }

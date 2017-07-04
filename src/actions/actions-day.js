@@ -5,7 +5,7 @@ export function getDayTasks(date) {
     dispatch({ type: type.FETCH_DAY_TASKS, date, status: 'fetching' });
     // TODO: Query Firebase
     requestAnimationFrame(() => {
-      dispatch({ type: type.FETCH_DAY_TASKS, date, status: 'complete', tasks: [] });
+      dispatch({ type: type.FETCH_DAY_TASKS, date, status: 'complete', items: [] });
     });
   }
 }

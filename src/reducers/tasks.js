@@ -19,7 +19,7 @@ function fetchDayTasks(state, action) {
   const { year, month, date } = action.date;
   state = state.setIn([year, month, date], {
     status: action.status,
-    tasks: action.tasks || [],
+    items: action.items || [],
   });
   return state;
 }
